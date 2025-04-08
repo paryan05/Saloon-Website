@@ -1,0 +1,48 @@
+<!-- I have already made navigation bar so please watch part 1 of this series I am just going to copy all the code  -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seven Star salon</title>
+    <link rel="shortcut icon" type="x-icon" href="{% static 'Project/img/logo.webp' %}">
+
+    <link rel="stylesheet" href="{% static 'Project/css/salon.css' %}">
+    <link rel="stylesheet" href="{% static 'Project/css/style.css' %}">
+    <script src="https://kit.fontawesome.com/7a6c6b42a6.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    {% include 'header.html' %}
+
+    <section class="sectionFirst">
+        <h1>Salon</h1>
+    </section>
+
+    <!-- gallery -->
+    <div class="gallery">
+        <img src="{% static 'Project/img/salon1.jpg' %}" alt="">
+        <img src="{% static 'Project/img/salon2.jpg' %}" alt="">
+        <img src="{% static 'Project/img/salon3.jpg' %}" alt="">
+        <img src="{% static 'Project/img/salon4.jpg' %}" alt="">
+        <img src="{% static 'Project/img/salon5.jpg' %}" alt="">
+        <img src="{% static 'Project/img/salon6.jpg' %}" alt="">
+        <img src="{% static 'Project/img/salon7.jpg' %}" alt="">
+        <img src="{% static 'Project/img/salon8.jpg' %}" alt="">
+
+    </div>
+
+    <!-- discount section  -->
+    <section class="DiscountSection">
+        {% include 'discount.html' %}
+    </section>
+
+
+    {% include 'footer.html' %}
+    <script src="{% static 'Project/js/script.js' %}"></script></body>
+
+</html>

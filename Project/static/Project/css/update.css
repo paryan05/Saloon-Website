@@ -1,0 +1,112 @@
+
+
+.btn,#link {
+    margin-top: 20px;
+    display: inline-block; /* Buttons next to each other */
+    padding: 10px 15px; 
+    border-radius: 50px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+    color: white; /* Text color */
+    margin-right: 10px; /* Space between buttons */
+    transition: background-color 0.3s, transform 0.3s; /* Transition for hover effects */
+    font-size: 14px; /* Same font size for all buttons */
+    width: 150px; /* Fixed width for both buttons */
+    text-align: center; /* Center text in buttons */
+}
+
+.cancel-btn {
+    
+    background-color: #f0ad4e; /* Orange background for cancel button */
+}
+#update
+{
+    background-color: #07a060; /* Orange background for cancel button */
+
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Consistent background color */
+}
+
+header {
+    background-color: #333; /* Consistent header style */
+    color: white;
+    padding: 1rem 0;
+}
+
+.profile-container {
+    max-width: 800px; /* Maximum width for the form */
+    margin: 20px auto; /* Center the container */
+    margin-top: 10%; /* Space from the top */
+    padding: 20px; /* Inner padding */
+    background: white; /* White background for the form */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.profile-content {
+    display: flex; /* Use flexbox for layout */
+    align-items: flex-start; /* Align items at the start */
+    margin-top: 20px; /* Space between header and form content */
+}
+
+.profile-pic {
+    flex: 0 0 150px; /* Fixed width for profile picture */
+    margin-right: 20px; /* Space between image and form */
+}
+
+.profile-pic img {
+    width: 100%; /* Responsive image */
+    border-radius: 50%; /* Circular profile picture */
+    border: 2px solid #ccc; /* Optional border around the image */
+}
+
+.profile-info {
+    flex: 1; /* Take remaining space */
+    text-align: left; /* Align text to the left */
+}
+
+.profile-info table {
+    width: 100%; /* Full width for the table */
+    border-collapse: collapse; /* Merge borders */
+}
+
+.profile-info td {
+    padding: 10px; /* Padding for table cells */
+    border-bottom: 1px solid #ddd; /* Bottom border for rows */
+}
+
+.profile-info td:first-child {
+    font-weight: bold; /* Make first column bold */
+}
+
+.profile-info input[type="text"],
+.profile-info input[type="email"] {
+    width: 100%; /* Full width for input fields */
+    padding: 8px; /* Inner padding for inputs */
+    border: 1px solid #ccc; /* Border for input fields */
+    border-radius: 4px; /* Rounded corners for inputs */
+    box-sizing: border-box; /* Include padding and border in element's total width */
+}
+
+.profile-info input[type="text"]:focus,
+.profile-info input[type="email"]:focus {
+    border-color: #4CAF50; /* Green border on focus */
+    outline: none; /* Remove default outline */
+}
+
+
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #333; /* Consistent footer style */
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}

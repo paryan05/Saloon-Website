@@ -1,0 +1,68 @@
+{% load static %}
+
+<div class="beforefooter">
+    <div class="box">
+        <div class="logo">Seven Star Salon</div>
+        <p class="para">Seven Star Salon is known for its top-tier beauty and grooming services, providing a wide
+            range of treatments in a comfortable and stylish environment. Whether it's hair styling, skincare, or
+            spa services, they focus on personalized care and a luxurious experience.</p>
+
+        <div class="bf-text">Subscribe For Offers</div>
+
+        <div class="subscribe">
+            <input type="email" name="" class="emailInput" placeholder="example@gmail.com">
+            <button class="btn">subscribe</button>
+        </div>
+    </div>
+
+    <div class="box">
+        <div class="bf-text">Quick Links</div>
+        <ul>
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'services' %}">Services</a></li>
+            <li><a href="{% url 'salon' %}">Salon</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+
+        <div class="bf-text">Follow Us</div>
+        <div class="icons">
+            <a href="https://www.instagram.com/_aryan_5505?igsh=MWtrcGtreDZzcXhwaA=="
+                class="fa-brands fa-facebook-f"></a>
+            <a href="https://www.instagram.com/_aryan_5505?igsh=MWtrcGtreDZzcXhwaA=="
+                class="fa-brands fa-google"></a>
+            <a href="https://www.instagram.com/_aryan_5505?igsh=MWtrcGtreDZzcXhwaA=="
+                class="fa-brands fa-instagram"></a>
+            <a href="https://www.instagram.com/_aryan_5505?igsh=MWtrcGtreDZzcXhwaA=="
+                class="fa-brands fa-youtube"></a>
+        </div>
+    </div>
+
+    <div class="box">
+        <div class="bf-text">Say Hi! </div>
+        <ul class="SayHi">
+            <li>aryanvyom5505@gmail.com</li>
+            <li>aryanprajapati5505@gmail.com</li>
+        </ul>
+
+        <div class="bf-text">Call Us</div>
+        <ul class="SayHi">
+            <li>Phone : +91 8128351878</li>
+            <li>Toll Free: +91 550012322</li>
+        </ul>
+
+        <div class="bf-text">Find Us</div>
+
+        <div class="address">
+            FF-109, Devs White House, Chikhodra Sarsa, Road, opposite C.A.P Estate, Chikhodra, Anand, Gujarat 388320
+        </div>
+
+    </div>
+</div>
+
+<!-- footer  -->
+<footer>
+    <div class="fbox">Copyright &copy; {% now "Y" %} Seven Star Salon</div>
+    <div class="fbox">Powered By Seven Star Salon</div>
+</footer>
+

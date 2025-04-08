@@ -1,0 +1,96 @@
+<!-- I have already made navigation bar so please watch part 1 of this series I am just going to copy all the code  -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seven Star salon</title>
+    <link rel="stylesheet" href="{% static 'Project/css/about.css' %}">
+    <link rel="stylesheet" href="{% static 'Project/css/style.css' %}">
+    <link rel="shortcut icon" type="x-icon" href="{% static 'Project/img/logo.webp' %}">
+
+    <script src="https://kit.fontawesome.com/7a6c6b42a6.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    {% include 'header.html' %}
+    <section class="sectionFirst">
+        <h1>About</h1>
+
+    </section>
+
+
+    <!-- second section  -->
+    <section class="AboutMeInDetail">
+        <span class="img">
+            <img src="{% static 'Project/img/PremBhai.jpg' %}" alt="">
+        </span>
+        
+        <div class="infoAboutMe">
+            <h1>It's All About My Story</h1>
+            <div class="p-text">I Have Been A Passionate Haircut Artist.</div>
+            <p class="para">The story of a men's hair salon owner often begins with a passion for hairstyling and a dream of creating a space where men can feel confident and well-groomed. Starting with humble beginnings, many owners work their way up from apprenticeships or working in other salons, learning the craft and the business side of things. Over time, through dedication, building relationships with clients, and staying updated on trends, they establish their own salon, offering not just haircuts, but a personalized grooming experience tailored to modern men's needs.
+            </p>
+
+            <h2>Prem Sen</h2>
+
+            <div class="iconLink">
+                <i class="fa-solid fa-phone">
+                    <a href="#">+91 8128351878</a>
+                </i>
+                <i class="fa-solid fa-envelope">
+                    <a href="#">aryanprajapati5505@gamil.com</a>
+                </i>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- section three  -->
+    <section class="aboutTeam-Info">
+        <div class="teamText">
+            <div class="t-heading">Our Awesome Team</div>
+        </div>
+
+        <div class="teamImgInfo">
+            <div class="box">
+                <div class="img">
+                    <img src="{% static 'Project/img/Staff1.jpg' %}" alt="">
+                </div>
+                <div class="t-name">Kartik Aaryan</div>
+                <div class="t-position">Founder</div>
+            </div>
+            <div class="box">
+                <div class="img">
+                    <img src="{% static 'Project/img/Staff2.jpg' %}" alt="">
+                </div>
+                <div class="t-name">Divyenndu</div>
+                <div class="t-position">Support Team</div>
+            </div>
+            <div class="box">
+                <div class="img">
+                    <img src="{% static 'Project/img/Staff3.jpg' %}" alt="">
+                </div>
+                <div class="t-name">Sahid Kapoor</div>
+                <div class="t-position">Support Team</div>
+            </div>
+            
+            <div class="box">
+                <div class="img">
+                    <img src="{% static 'Project/img/Staff4.jpg' %}" alt="">
+                </div>
+                <div class="t-name">Ajay Devgn</div>
+                <div class="t-position">Support Team</div>
+            </div>
+            
+        </div>
+    </section>
+
+
+
+    {% include 'footer.html' %}
+    <script src="{% static 'Project/js/script.js' %}"></script></body>
+</html>

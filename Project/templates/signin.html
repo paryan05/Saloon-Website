@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AK Salon Website</title>
+    <script src="https://kit.fontawesome.com/7a6c6b42a6.js" crossorigin="anonymous"></script>
+    <style>
+        .imgcontainer {
+            text-align: center;
+            margin: 24px 0 12px 0;
+        }
+
+        img {
+            width: 35%;
+            border-radius: 50%;
+        }
+        .error {
+            color: #ff0000; /* Red color for the error text */
+            font-size: 16px; /* Set font size */
+            font-weight: bold; /* Make the error message bold */
+            background-color: #f8d7da; /* Light red background */
+            border: 1px solid #f5c2c7; /* Red border */
+            padding: 10px; /* Add padding around the message */
+            border-radius: 5px; /* Rounded corners */
+            margin: 10px 0; /* Space around the message */
+            text-align: center; /* Center the text */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="form-container">
+        <div class="imgcontainer">
+            <img src="{% static 'Project/img/avatar_img2.png' %}" alt="User Avatar">
+        </div>
+
+        {% if request.GET.error_login %}
+        <div id="login-error" class="error">Invalid username or password</div>
+        {% endif %}
+
+        <form method="POST" action="{% url 'loginaction' %}">
+            {% csrf_token %}
+            
+            <label for="uname">Username:</label>
+            <input type="text" id="signin-username" name="uname" placeholder="Enter your username" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="signin-password" name="password" placeholder="Enter your password" required>
+            
+            <button type="submit">Login</button>
+        </form>
+
+        <!-- Display error or success message based on query parameter -->
+    </div>
+
+    <script>
+        // Check if there's an error message to show and display it in an alert
+        const errorElement = document.getElementById('login-error');
+        if (errorElement) {
+            alert(errorElement.textContent);  // Display the error message in an alert
+        }
+    </script>
+
+</body>
+</html>

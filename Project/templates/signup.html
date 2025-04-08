@@ -1,0 +1,174 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AK Salon Website</title>
+    <script src="https://kit.fontawesome.com/7a6c6b42a6.js" crossorigin="anonymous"></script>
+    
+    <style>
+        .imgcontainer {
+            text-align: center;
+            margin: 24px 0 12px 0;
+        }
+
+        img {
+            width: 35%;
+            border-radius: 50%;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        .input-error {
+            border-color: red;
+        }
+    </style>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const signupForm = document.querySelector("form");
+
+            document.getElementById("signup-fname").addEventListener("input", validateFirstName);
+            document.getElementById("signup-lname").addEventListener("input", validateLastName);
+            document.getElementById("signup-birthdate").addEventListener("input", validateBirthdate);
+            document.getElementById("signup-mobile").addEventListener("input", validateMobile);
+            document.getElementById("signup-email").addEventListener("input", validateEmail);
+            document.getElementById("signup-password").addEventListener("input", validatePassword);
+
+            signupForm.addEventListener("submit", function (event) {
+                if (!validateForm()) {
+                    event.preventDefault();
+                }
+            });
+
+            function validateForm() {
+                let isValid = true;
+                if (!validateFirstName()) isValid = false;
+                if (!validateLastName()) isValid = false;
+                if (!validateBirthdate()) isValid = false;
+                if (!validateMobile()) isValid = false;
+                if (!validateEmail()) isValid = false;
+                if (!validatePassword()) isValid = false;
+                return isValid;
+            }
+
+            function showErrorMessage(element, message) {
+                let errorElement = element.nextElementSibling;
+                if (!errorElement || !errorElement.classList.contains("error-message")) {
+                    errorElement = document.createElement("span");
+                    errorElement.classList.add("error-message");
+                    element.after(errorElement);
+                }
+                errorElement.textContent = message;
+                element.classList.add("input-error");
+            }
+
+            function clearErrorMessage(element) {
+                let errorElement = element.nextElementSibling;
+                if (errorElement && errorElement.classList.contains("error-message")) {
+                    errorElement.textContent = "";
+                }
+                element.classList.remove("input-error");
+            }
+
+            function validateFirstName() {
+                const fname = document.getElementById("signup-fname");
+                if (fname.value.length < 2 || fname.value.length > 30) {
+                    showErrorMessage(fname, "First name should be between 2 and 30 characters.");
+                    return false;
+                }
+                clearErrorMessage(fname);
+                return true;
+            }
+
+            function validateLastName() {
+                const lname = document.getElementById("signup-lname");
+                if (lname.value.length < 2 || lname.value.length > 30) {
+                    showErrorMessage(lname, "Last name should be between 2 and 30 characters.");
+                    return false;
+                }
+                clearErrorMessage(lname);
+                return true;
+            }
+
+            function validateBirthdate() {
+                const birthdate = document.getElementById("signup-birthdate");
+                if (!/^\d{2}-\d{2}-\d{4}$/.test(birthdate.value)) {
+                    showErrorMessage(birthdate, "Birthdate must be in the format dd-mm-yyyy.");
+                    return false;
+                }
+                clearErrorMessage(birthdate);
+                return true;
+            }
+
+            function validateMobile() {
+                const mobile = document.getElementById("signup-mobile");
+                if (!/^\d{10}$/.test(mobile.value)) {
+                    showErrorMessage(mobile, "Please enter a valid 10-digit mobile number.");
+                    return false;
+                }
+                clearErrorMessage(mobile);
+                return true;
+            }
+
+            function validateEmail() {
+                const email = document.getElementById("signup-email");
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailPattern.test(email.value)) {
+                    showErrorMessage(email, "Please enter a valid email address.");
+                    return false;
+                }
+                clearErrorMessage(email);
+                return true;
+            }
+
+            function validatePassword() {
+                const password = document.getElementById("signup-password");
+                if (password.value.length < 5) {
+                    showErrorMessage(password, "Password must be at least 5 characters long.");
+                    return false;
+                }
+                clearErrorMessage(password);
+                return true;
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <form method="POST" action="{% url 'index' %}">
+        {% csrf_token %}
+        <div class="imgcontainer">
+            <img src="{% static 'Project/img/avatar_img2.png' %}" alt="Model 1">
+        </div>
+
+        <label for="fname">First Name:</label>
+        <input type="text" id="signup-fname" name="fname" required>
+
+        <label for="lname">Last Name:</label>
+        <input type="text" id="signup-lname" name="lname" required>
+
+        <label for="uname">Username:</label>
+        <input type="text" id="signup-username" name="uname" placeholder="@user_name" required>
+
+        <label for="birthdate">Birthdate:</label>
+        <input type="text" id="signup-birthdate" name="birthdate" placeholder="dd-mm-yyyy" required>
+
+        <label for="mobile">Mobile Number:</label>
+        <input type="text" id="signup-mobile" name="mobile" pattern="[0-9]{10}" title="Please enter a valid 10-digit mobile number" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="signup-email" name="email" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="signup-password" name="pass" required>
+
+        <button type="submit">Sign Up</button>
+    </form>
+</body>
+</html>  

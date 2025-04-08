@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'Project/css/update.css' %}">
+    <link rel="shortcut icon" type="x-icon" href="{% static 'Project/img/logo.webp' %}">
+    <title>Update Profile - Seven Star Salon</title>
+</head>
+
+<body>
+    {% include 'header.html' %}
+
+    <div class="profile-container">
+        <h1>Update User Profile</h1>
+        <form method="post" action="{% url 'updateDetails' %}">
+            {% csrf_token %}
+            <div class="profile-content">
+                <div class="profile-pic">
+                    <img src="{% static 'Project/img/avatar_img2.png' %}" alt="Profile Picture">
+                </div>
+                <div class="profile-info">
+                    <table>
+                        <tr>
+                            <td><strong>First Name:</strong></td>
+                            <td>
+                                <input type="text" id="first_name" name="first_name" value="{{ request.session.first_name }}" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Last Name:</strong></td>
+                            <td>
+                                <input type="text" id="last_name" name="last_name" value="{{ request.session.last_name }}" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Username:</strong></td>
+                            <td>
+                                {{ request.session.username }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Birthdate:</strong></td>
+                            <td>
+                                <input type="text" id="birthdate" name="birthdate" value="{{ request.session.birthdate }}" placeholder="dd-mm-yyyy" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Mobile Number:</strong></td>
+                            <td>
+                                <input type="text" id="mobile" name="mobile" value="{{ request.session.mobile }}" pattern="[0-9]{10}" title="Please enter a valid 10-digit mobile number" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Email:</strong></td>
+                            <td>
+                                <input type="email" id="email" name="email" value="{{ request.session.email }}" required>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="button-container">
+                        <a href="{% url 'profile' %}"  id="cancle" class="btn cancel-btn">Cancel</a> <!-- Cancel Button -->
+                        <button type="submit" class="btn update-btn">Update Details</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </form>
+    </div>
+
+    {% include 'footer.html' %}
+</body>
+
+</html>

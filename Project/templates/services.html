@@ -1,0 +1,102 @@
+<!-- I have already made navigation bar so please watch part 1 of this series I am just going to copy all the code  -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seven Star salon</title>
+    <link rel="shortcut icon" type="x-icon" href="{% static 'Project/img/logo.webp' %}">
+
+    <link rel="stylesheet" href="{% static 'Project/css/services.css' %}">
+    <link rel="stylesheet" href="{% static 'Project/css/style.css' %}">
+    <script src="https://kit.fontawesome.com/7a6c6b42a6.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    {% include 'header.html' %}
+    <section class="sectionFirst">
+        <h1>Services</h1>
+
+    </section>
+
+
+    <!-- section second  -->
+    <section class="aboutServices">
+        <div class="ser-litText">Choose From Collection</div>
+
+        <div class="ser-box">
+            <div class="box">
+                <div class="img">
+                    <img src="{% static 'Project/img/HairCut.webp' %}" alt="">               
+
+                </div>
+                <div class="boxinfo">
+                    <div class="ser-name">Hair Cut</div>
+                    <p class="ser-discription">This is a short description elaborationg the service you have mentioned
+                        above.</p>
+                </div>
+            </div>
+            <div class="box">
+                <div class="img">
+                    <img src="{% static 'Project/img/HairWash.jpg' %}" alt="">               
+
+                </div>
+                <div class="boxinfo">
+
+                    <div class="ser-name">Hair Wash</div>
+                    <p class="ser-discription">This is a short description elaborationg the service you have mentioned
+                        above.</p>
+                </div>
+
+            </div>
+            <div class="box">
+                <div class="img">
+                    <img src="{% static 'Project/img/HairCut.webp' %}" alt="">               
+                </div>
+                <div class="boxinfo">
+
+                    <div class="ser-name">Face Treatment</div>
+                    <p class="ser-discription">This is a short description elaborationg the service you have mentioned
+                        above.</p>
+                </div>
+
+            </div>
+            <div class="box">
+                <div class="img">
+                    <img src="{% static 'Project/img/HairColor.png' %}" alt="">
+                </div>
+                <div class="boxinfo">
+
+                    <div class="ser-name">Hair Color</div>
+                    <p class="ser-discription">This is a short description elaborationg the service you have mentioned
+                        above.</p>
+                </div>
+
+            </div>
+            <div class="box">
+                <div class="img">
+                    <img src="{% static 'Project/img/BTrim.jpeg' %}" alt="">
+                </div>
+                <div class="boxinfo">
+                    <div class="ser-name">Beard Trimming</div>
+                    <p class="ser-discription">This is a short description elaborationg the service you have mentioned
+                        above.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- discount section  -->
+    <section class="DiscountSection">
+        {% include 'discount.html' %}
+    </section>
+
+    {% include 'footer.html' %}
+    <script src="{% static 'Project/js/script.js' %}"></script>
+</body>
+
+</html>

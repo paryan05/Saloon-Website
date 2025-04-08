@@ -1,0 +1,138 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seven Star salon</title>
+    <link rel="shortcut icon" type="x-icon" href="{% static 'Project/img/logo.webp' %}">
+    <link rel="stylesheet" href="{% static 'Project/css/style.css' %}">
+    <script src="https://kit.fontawesome.com/7a6c6b42a6.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    {% include 'header.html' %}
+    <section class="sectionFirst">
+        <div class="frontPage">
+            <div class="address">FF-109, Devs White House, Chikhodra Sarsa, Road, opposite C.A.P Estate, Chikhodra,
+                Anand, Gujarat 388320</div>
+            <h2 class="heading">Seven Star Salon</h2>
+            <p class="para">Seven Star Salon offers premium beauty and grooming services in a luxurious, modern setting.
+            </p>
+            <div class="btn">
+                <a href="#">Get Gorgeous</a>
+                <a href="{% url 'contact' %}" id="contactNow">Contact Now</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="sectionSecond">
+        <div class="ModelIMG">
+            <img src="{% static 'Project/img/model 1.jpg' %}" alt="Model 1">
+            <img src="{% static 'Project/img/model 2.jpg' %}" alt="Model 2">
+            <img src="{% static 'Project/img/model 3.jpg' %}" alt="Model 3">
+            <img src="{% static 'Project/img/model 4.jpg' %}" alt="Model 4">
+        </div>
+
+
+
+        <div class="textInfo">
+            <div class="greet">Welcome To</div>
+            <h3 class="title">My Studio</h3>
+            <p class="para">Seven Star Salon is known for its top-tier beauty and grooming services, providing a wide
+                range of treatments in a comfortable and stylish environment. Whether it's hair styling, skincare, or
+                spa services, they focus on personalized care and a luxurious experience.</p>
+
+            <a class="btn">Know More</a>
+        </div>
+    </section>
+    <section class="DiscountSection">
+    {% include 'discount.html' %}
+    </section>
+    <section class="sectionFive">
+        <div class="BeautySolutions">
+            <h2>Hair Cuts</h2>
+            <span></span>
+            <ul>
+                <li>Men's Haircut <span>₹ 200</span></li>
+                <li>Teen's Haircut <span>₹ 160</span></li>
+                <li>Stylish Haircut <span>₹ 250</span></li>
+                <li>Children's Haircut <span>₹ 100</span></li>
+            </ul>
+        </div>
+        <div class="BeautySolutions">
+            <h2>Beards & Shaves</h2>
+            <span></span>
+            <ul>
+                <li>Razor Shave <span>₹ 70</span></li>
+                <li>Beard Trim <span>₹ 110</span></li>
+                <li>Straight Razor Beard Line-Up <span>₹ 100</span></li>
+                <li>Moustache <span>₹ 50</span></li>
+            </ul>
+        </div>
+        <div class="BeautySolutions">
+            <h2>Coloring</h2>
+            <span></span>
+            <ul>
+                <li>Hair Coloring <span>₹ 170</span></li>
+                <li>Beard Coloring – Semi Permanent <span>₹ 70</span></li>
+                <li>Beard Coloring – Permanent <span>₹ 120</span></li>
+                <li>Highlights <span>₹ 125</span></li>
+            </ul>
+        </div>
+        <div class="BeautySolutions">
+            <h2>Waxing</h2>
+            <span></span>
+            <ul>
+                <li>Ears, Nose And Brows <span>₹ 100</span></li>
+                <li>Nose <span>₹ 25</span></li>
+                <li>Ears <span>₹ 25</span></li>
+                <li>Eyebrows <span>₹ 25</span></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- section six  -->
+    <section class="sectionSix">
+        <h2>Review Us</h2>
+        <div class="icon">
+            <a href="https://www.instagram.com/_aryan_5505?igsh=MWtrcGtreDZzcXhwaA=="
+                class="fa-brands fa-facebook-f"></a>
+            <a href="https://www.instagram.com/_aryan_5505?igsh=MWtrcGtreDZzcXhwaA==" class="fa-brands fa-google"></a>
+            <a href="https://www.instagram.com/_aryan_5505?igsh=MWtrcGtreDZzcXhwaA=="
+                class="fa-brands fa-instagram"></a>
+        </div>
+
+        <div class="imgicon">
+            <img src="{% static 'Project/img/Review.jpg' %}" alt="Model Pic">
+        </div>
+
+
+    </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+    
+            // Check for success message
+            if (urlParams.has('success')) {
+                alert("User account deleted successfully!");
+            }
+    
+            // Check for error message
+            if (urlParams.has('error')) {
+                alert("Failed to delete user.");
+            }
+        });
+    </script>
+    {% include 'footer.html' %}
+
+
+    <!-- js  -->
+    <script src="{% static 'Project/js/script.js' %}"></script>
+   
+
+
+</body>
+
+</html>

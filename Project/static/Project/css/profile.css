@@ -1,0 +1,106 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem 0;
+}
+
+.profile-container {
+    max-width: 800px;
+    margin: 20px auto;
+    margin-top: 10%;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.profile-content {
+    display: flex; /* Use flexbox for layout */
+    align-items: flex-start; /* Align items to the start */
+    margin-top: 20px; /* Space between header and profile content */
+}
+
+.profile-pic {
+    flex: 0 0 150px; /* Fixed width for profile picture */
+    margin-right: 20px; /* Space between image and text */
+}
+
+.profile-pic img {
+    width: 100%; /* Responsive image */
+    border-radius: 50%; /* Circular profile picture */
+    border: 2px solid #ccc; /* Optional: Add a border around the image */
+}
+
+.profile-info {
+    flex: 1; /* Take remaining space */
+    text-align: left; /* Align text to the left */
+}
+
+.profile-info table {
+    width: 100%; /* Full width */
+    border-collapse: collapse; /* Merge borders */
+}
+
+.profile-info td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd; /* Bottom border for rows */
+}
+
+.profile-info td:first-child {
+    font-weight: bold; /* Make first column bold */
+}
+
+.profile-info tr:hover {
+    background-color: #f1f1f1; /* Hover effect for table rows */
+    transition: background-color 0.3s; /* Animation effect */
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #333;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+.button-container {
+    margin-top: 20px; /* Space above buttons */
+}
+
+.btn {
+    display: inline-block; /* Buttons next to each other */
+    padding: 10px 20px; /* Padding for buttons */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+    color: white; /* Text color */
+    margin-right: 10px; /* Space between buttons */
+    transition: background-color 0.3s, transform 0.3s; /* Transition for hover effects */
+}
+
+.update-btn {
+    background-color: #4CAF50; /* Green */
+}
+
+.delete-btn {
+    background-color: #f44336; /* Red */
+}
+
+.btn:hover {
+    transform: translateY(-2px); /* Lift effect on hover */
+}
+
+.update-btn:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+.delete-btn:hover {
+    background-color: #e53935; /* Darker red on hover */
+}

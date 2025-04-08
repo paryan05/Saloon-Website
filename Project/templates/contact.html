@@ -1,0 +1,83 @@
+<!-- I have already made navigation bar so please watch part 1 of this series I am just going to copy all the code  -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seven Star salon</title>
+    <link rel="shortcut icon" type="x-icon" href="{% static 'Project/img/logo.webp' %}">
+    <link rel="stylesheet" href="{% static 'Project/css/contact.css' %}">
+    <link rel="stylesheet" href="{% static 'Project/css/style.css' %}">
+    <script src="https://kit.fontawesome.com/7a6c6b42a6.js" crossorigin="anonymous"></script>
+    <script src="{% static 'Project/js/formValidation.js' %}"></script>
+    <style>
+        .error-message {
+            color: red;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        .input-error {
+            border-color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    {% include 'header.html' %}
+    <section class="sectionFirst">
+        <h1>Contact Us</h1>
+    </section>
+
+
+    <!-- second section  -->
+    <section class="FormMap">
+        <div class="form">
+            <div class="f-head">Get In Touch</div>
+
+            <form id="contactForm" method="POST" action="{% url 'contact_form' %}">
+                {% csrf_token %}
+                <input type="text" name="name" id="name" placeholder="Name" required>
+                <input type="text" name="number" id="number" placeholder="Number" required>
+                <input type="email" name="email" id="email" placeholder="Email" required>
+                <select name="services" id="services">
+                    <option value="#" disabled selected>Select Services</option>
+                    <option value="Hair Color">Hair Color</option>
+                    <option value="Hair Styling">Hair Styling</option>
+                    <option value="Hair Wash">Hair Wash</option>
+                </select>
+                <textarea name="message" id="message" cols="30" rows="10" placeholder="Message"></textarea>
+                <button type="submit">Send Request</button>
+
+            </form>
+        </div>
+
+
+        <div class="map">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.896281689038!2d72.9929977!3d22.5599944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e49fef03bc395%3A0xfcac6b1746655c72!2sSeven%20Star%20Salon!5e0!3m2!1sen!2sin!4v1696086667342!5m2!1sen!2sin"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Check if the URL contains a success parameter
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has('success')) {
+                alert("Your request has been submitted successfully!");
+            }
+            // Check if the URL contains an error parameter
+            if (urlParams.has('error')) {
+                alert("Failed to submit your request. Please try again.");
+            }
+        });
+    </script>
+    {% include 'footer.html' %}
+</body>
+
+</html>
